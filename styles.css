@@ -1,0 +1,88 @@
+:root {
+	--principal-orange: #ff4800;
+	--second-orange: #fda880;
+	--third-orange: #d35527;
+	--principal-purple: #940073;
+	--second-purple: #c483b4;
+	--third-purple: #6e1159;
+	--principal-yellow: #cf9a36;
+	--second-yellow: #ecdca5;
+	--white: #feffff;
+	--ultraLighit-grey: #f6f8fa;
+	--light-grey: #d0d0d0;
+	--medium-grey: #5b5c5c;
+	--black: #242526;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+header {
+	width: 100%;
+	height: 15vh;
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--ultraLighit-grey);
+}
+
+.principalLog {
+	background-image: url('./assets/logo.jpeg');
+	background-size: cover;
+	width: 70px;
+	height: 70px;
+	margin: 6px 14px;
+	/* Con las dos lineas a continuación QUITO EL FONDO BLANCO*/
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+}
+
+.header_list {
+	text-align: center;
+	transition: transform 0.3s;
+	/* overflow: hidden; */
+}
+.header_list-img {
+	width: 80px;
+	height: 80px;
+}
+.header_list-img:active {
+	transform: scale(1.2);
+	transition: 0.3s;
+}
+
+.header_options-list {
+	transition: height 0.3s;
+	height: 0;
+}
+.list_show-header {
+	width: 80%;
+	margin-left: auto;
+	border-left: 2px solid var(--medium-grey);
+	transition: height 0.4s;
+	height: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6em;
+	margin-right: 30px;
+}
+
+.items_header {
+	color: var(--principal-orange);
+}
+
+main {
+	width: 100%;
+	height: 70vh;
+}
+.main_nav {
+	display: none; /* Para que solo se vea si la pantalla cumple con mas de 700px*/
+}
