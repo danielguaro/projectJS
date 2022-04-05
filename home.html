@@ -18,28 +18,30 @@
 				<div class="principalLog"></div>
 			</a>
 			<nav class="options">
-				<ul class="header_options-list">
-					<li class="header_list">
-						<div class="header_button">
-							<img src="./assets/menu.svg" alt="menu" class="header_list-img" />
-						</div>
-						<ul class="list_show-header">
-							<li class="list_item-header">
-								<a class="items_header" href="">Inicio</a>
-							</li>
-							<li class="list_item-header">
-								<a class="items_header" href="">Iniciar sesión</a>
-							</li>
-							<li class="list_item-header">
-								<a class="items_header" href="">Momentos</a>
-							</li>
-							<li class="list_item-header">
-								<a class="items_header" href="">Quienes somos</a>
-							</li>
-							<li class="list_item-header">
-								<a class="items_header" href="">Contactanos</a>
-							</li>
-						</ul>
+				<img
+					src="./assets/menu.svg"
+					alt="menu"
+					class="header_list-img"
+					id="btnMenu"
+				/>
+				<img
+					src="./assets/upArrow.svg"
+					alt="menu"
+					class="upArrow1"
+					id="upArrow"
+				/>
+
+				<ul class="menu" id="menu">
+					<li class="menu__item"><a href="" class="menu__link">Inicio</a></li>
+					<li class="menu__item">
+						<a href="" class="menu__link">Iniciar sesión</a>
+					</li>
+					<li class="menu__item"><a href="" class="menu__link">Momentos</a></li>
+					<li class="menu__item">
+						<a href="" class="menu__link">Quienes Somos</a>
+					</li>
+					<li class="menu__item">
+						<a href="" class="menu__link">Contactanos</a>
 					</li>
 				</ul>
 			</nav>
@@ -54,10 +56,23 @@
 						</div>
 					</li>
 					<li class="list_item">
-						<div class="list_button">
+						<div class="list_button list_button--click"">
 							<img src="./assets/user.svg" alt="" class="list_img" />
 							<a href="" class="nav_link">usuario</a>
+							<img
+								src="./assets/arrowHoriz.svg"
+								alt="arrow"
+								class="list_arrow"
+							/>
 						</div>
+						<ul class="list_show">
+							<li class="list_inside">
+								<a href="" class="nav_link nav_link--inside">Iniciar sesión</a>
+							</li>
+							<li class="list_inside">
+								<a href="" class="nav_link nav_link--inside">registrarse</a>
+							</li>
+						</ul>
 					</li>
 					<li class="list_item list_item--click">
 						<div class="list_button list_button--click">
@@ -98,6 +113,17 @@
 					</li>
 				</ul>
 			</nav>
+      <section class="sectionOne">
+        <div class="sectionOne_info">
+          <h1 class="info-title">Floristería<br>Jardin Imperial</h1> <!--Etiqueta br = salto de linea-->
+          <p class="info-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima quibusdam delectus recusandae vel consequuntur, repudiandae accusamus cumque. D.</p>
+        </div>
+        <img class="firstSection_flowersImg" src="" alt="flores">
+      </section>
+      <section class="sectionTwo">
+        <div class="sectionOne_image"></div>
+        <div class="sectionOne_image"></div>
+      </section>
 		</main>
 		<script src="./index.js"></script>
 	</body>

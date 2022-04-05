@@ -14,3 +14,19 @@ listElements.forEach((listElement) => {
 		menu.style.height = `${height}px`;
 	});
 });
+
+//
+//
+const btnMenu = document.querySelector('#btnMenu');
+const menu = document.querySelector('#menu');
+const closeArrow = document.querySelector('#upArrow');
+btnMenu.addEventListener('click', () => {
+	menu.classList.toggle('show');
+	btnMenu.classList.toggle('hide');
+	closeArrow.classList.toggle('upArrow');
+});
+closeArrow.addEventListener('click', () => {
+	menu.classList.toggle('show');
+	btnMenu.classList.toggle('hide');
+	closeArrow.classList.toggle('upArrow');
+});
