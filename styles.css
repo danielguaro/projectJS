@@ -43,11 +43,11 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 96%;
+	max-width: 1400px;
 	margin: 0 auto;
 	height: 100%;
 }
 
-/**/
 .menu_links {
 	height: 100%;
 	transition: transform 0.5s;
@@ -68,6 +68,15 @@
 	--rotat: rotate(90deg);
 }
 
+.menu_link {
+	color: var(--principal-purple);
+	text-decoration: none;
+	padding: 0 30; /*Vertical Horizontal */
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
 .menu_nesting {
 	clip-path: var(--clip);
 }
@@ -77,16 +86,6 @@
 	transition: transform 0.3s;
 	display: block;
 	margin-left: 4px;
-}
-
-.menu_link {
-	color: var(--principal-purple);
-	text-decoration: none;
-	text-align: center;
-	padding: 0 30; /*Vertical Horizontal */
-	display: flex;
-	align-items: center;
-	height: 100%;
 }
 
 .menu_link:hover {
@@ -124,9 +123,76 @@
 	align-items: center;
 	padding: 0 14px;
 	cursor: pointer;
+	display: none;
 }
 
 .menu_img-desple {
 	display: block;
 	width: 40px;
+}
+
+@media (max-width: 800px) {
+	.menu_desplegable {
+		display: flex;
+	}
+
+	.menu_item {
+		--clip: 0;
+		overflow: hidden;
+	}
+
+	.menu_item-active {
+		--rotat: rotate(0);
+		--background: var(--second-purple);
+	}
+
+	.menu_item-show {
+		background: var(--background);
+	}
+
+	.menu_links {
+		position: fixed;
+		min-width: 200px;
+		max-width: 240px;
+		top: 12%;
+		bottom: 0;
+		right: 0;
+		background-color: var(--second-yellow);
+		overflow: auto; /* Para que se desplace verticalmente*/
+		display: grid;
+		grid-auto-rows: max-content;
+		transform: translateX(100%);
+	}
+
+	.menu_links-show {
+		transform: unset;
+		width: 100%;
+	}
+
+	.menu_link {
+		padding: 25px 0;
+		padding-left: 20px;
+		height: auto;
+	}
+
+	.menu_arrow {
+		margin-left: auto;
+		margin-right: 20px;
+	}
+
+	.menu_nesting {
+		display: grid;
+		position: unset;
+		width: 99%;
+		transform: translateY(0);
+		height: 0;
+		transition: height 0.3s;
+		background: var(--second-purple);
+	}
+
+	.menu_link-inside {
+		width: 90%;
+		margin-left: auto;
+		border-left: 1px solid var(--principal-purple);
+	}
 }

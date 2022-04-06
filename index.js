@@ -1,36 +1,46 @@
-let desplegable = document.querySelector('.desplegable');
+(function () {
+	const listElements = document.querySelectorAll('.menu_item-show');
+	const list = document.querySelector('.menu_links');
+	const menu = document.querySelector('.menu_desplegable');
 
-//
-//
-let listElements = document.querySelectorAll('.list_button--click');
-listElements.forEach((listElement) => {
-	listElement.addEventListener('click', () => {
-		listElement.classList.toggle('arrow'); //crea una clase con el nombre arrow cuando le doy click, de igual forma, si le vuelvo a dar click, lo quita
+	const addClick = () => {
+		listElements.forEach((element) => {
+			element.addEventListener('click', () => {
+				let subMenu = element.children[1];
+				let height = 0;
+				element.classList.toggle('menu_item-active');
+				if (subMenu.clientHeight == '0') {
+					height = subMenu.scrollHeight;
+				}
+				subMenu.style.height = `${height}px`;
+			});
+		});
+	};
+	// addClick();
+	const deleteStyleHeight = () => {
+		listElements.forEach((element) => {
+			if (element.children[1].getAttribute('style')) {
+				element.children[1].removeAttribute('style');
+				element.classList.remove('menu_item-active');
+			}
+		});
+	};
 
-		let height = 0;
-		let menu = listElement.nextElementSibling;
-		// console.log(
-		// 	menu.scrollHeight
-		// ); /* Para que diga el alto minimo que se requiere para que exista el elemento*/
-		if (menu.clientHeight == '0') {
-			height = menu.scrollHeight;
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 800) {
+			deleteStyleHeight();
+			if (list.classList.contains('menu_links-show')) {
+				list.classList.remove('menu_links-show');
+			}
+		} else {
+			addClick();
 		}
-		menu.style.height = `${height}px`;
 	});
-});
+	if (window.innerWidth <= 800) {
+		addClick();
+	}
 
-//
-//
-const btnMenu = document.querySelector('#btnMenu');
-const menu = document.querySelector('#menu');
-const closeArrow = document.querySelector('#upArrow');
-btnMenu.addEventListener('click', () => {
-	menu.classList.toggle('show');
-	btnMenu.classList.toggle('hide');
-	closeArrow.classList.toggle('upArrow');
-});
-closeArrow.addEventListener('click', () => {
-	menu.classList.toggle('show');
-	btnMenu.classList.toggle('hide');
-	closeArrow.classList.toggle('upArrow');
-});
+	menu.addEventListener('click', () => {
+		list.classList.toggle('menu_links-show');
+	});
+})();
