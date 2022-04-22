@@ -88,3 +88,58 @@ main {
 	background-position: center;
 	left: 4px;
 }
+
+/* <---- Main Month Flowers ------> */
+.month-flowers,
+.section-likes {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 155px));
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-content: center;
+}
+
+.cardMonth {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.img-cardMonth {
+	width: 60%;
+	height: 60%;
+	object-fit: cover;
+	border-radius: 20%;
+	border: 2px dotted var(--principal-orange);
+}
+
+.text-cardMonth {
+	color: var(--principal-purple);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.price-cardMonth {
+	color: var(--principal-orange);
+	font-size: 14px;
+}
+
+.btn-cardMonth {
+	background: var(--principal-purple);
+	color: var(--light-grey);
+	display: block;
+	padding: 2px 10px;
+	border: 2px solid var(--medium-grey);
+	border-radius: 20px;
+}
+
+.month-flowersTitle {
+	color: var(--medium-grey);
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
