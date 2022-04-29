@@ -10,7 +10,7 @@
 			href="./stylesDesktop.css"
 			/> -->
 		<link rel="stylesheet" href="./css/style_header.css" />
-		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/momentAmor/styles.css" />
 		<link rel="stylesheet" href="./css/footer.css" />
 		<title>Floristeria Jardin Imperial</title>
 	</head>
@@ -133,16 +133,32 @@
 			<section class="container-slider">
 				<article class="slider" id="slider">
 					<div class="slider__section">
-						<img src="./assets/flor2.jpeg" alt="" class="slider__img" />
+						<img
+							src="./assets/momentAmor/1001.jpeg"
+							alt=""
+							class="slider__img"
+						/>
 					</div>
 					<div class="slider__section">
-						<img src="./assets/flro1.jpeg" alt="" class="slider__img" />
+						<img
+							src="./assets/momentAmor/1002.jpeg"
+							alt=""
+							class="slider__img"
+						/>
 					</div>
 					<div class="slider__section">
-						<img src="./assets/flor4.jpeg" alt="" class="slider__img" />
+						<img
+							src="./assets/momentAmor/1003.jpeg"
+							alt=""
+							class="slider__img"
+						/>
 					</div>
 					<div class="slider__section">
-						<img src="./assets/flor5.jpeg" alt="" class="slider__img" />
+						<img
+							src="./assets/momentAmor/1004.jpeg"
+							alt=""
+							class="slider__img"
+						/>
 					</div>
 					<div id="btn-right" class="slider__btn slider__btn--right"></div>
 					<div id="btn-left" class="slider__btn slider__btn--left"></div>
@@ -151,43 +167,35 @@
 			</section>
 			<hr class="espacio" />
 			<section class="types">
-				<h2 class="month-flowersTitle">Tipo de arreglos</h2>
-				<div class="types-grid">
-					<div class="type-grid-item">
-						<a class="type-grid-information" href=""
-							><img src="./assets/flor7.jpeg" alt="" />
-							<p>Ramos</p></a
-						>
-					</div>
-					<div class="type-grid-item">
-						<a class="type-grid-information" href=""
-							><img src="./assets/flor7.jpeg" alt="" />
-							<p>Anchetas</p></a
-						>
-					</div>
-					<div class="type-grid-item">
-						<a class="type-grid-information" href=""
-							><img src="./assets/flor7.jpeg" alt="" />
-							<p>Ramilletes</p></a
-						>
-					</div>
-					<div class="type-grid-item">
-						<a class="type-grid-information" href=""
-							><img src="./assets/flor7.jpeg" alt="" />
-							<p>Cajas</p></a
-						>
+				<!--  -->
+				<div class="filter-container">
+					<div class="category-head">
+						<ul>
+							<div class="category-title active" id="todo">
+								<li>Todo</li>
+							</div>
+							<div class="category-title" id="ramos">
+								<li>Ramos</li>
+							</div>
+							<div class="category-title" id="anchetas">
+								<li>Anchetas</li>
+							</div>
+							<div class="category-title" id="ramilletes">
+								<li>Ramilletes</li>
+							</div>
+							<div class="category-title" id="cajas">
+								<li>Cajas</li>
+							</div>
+						</ul>
 					</div>
 				</div>
+				<h2 class="month-flowersTitle">Tipo de arreglos</h2>
+				<div class="filterResult"></div>
+				<!--  -->
+				</div>
 			</section>
-			<h2 class="month-flowersTitle">Top flores del mes</h2>
-			<section class="month-flowers"></section>
 			<h2 class="month-flowersTitle">Carrito temporal</h2>
 			<section class="section-likes"></section>
-			<div class="elementsBorrar">
-				<p>Total</p>
-				<p class="ValorTotal"></p>
-				<button class="vaciarTotal">Vaciar</button>
-			</div>
 			<section><article></article></section>
 		</main>
 		<footer>
@@ -219,5 +227,6 @@
 		<script src="./js/floresMes.js" type="module"></script>
 		<script src="./js/dataBD.js" type="module"></script>
 		<script src="./js/ensayo1.js" type="module"></script>
+		<script src="./js/filterAmor.js" type="module"></script>
 	</body>
 </html>

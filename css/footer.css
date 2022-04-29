@@ -1,0 +1,57 @@
+:root {
+	--principal-orange: #ff4800;
+	--second-orange: #fda880;
+	--third-orange: #d35527;
+	--principal-purple: #940073;
+	--second-purple: #c483b4;
+	--third-purple: #6e1159;
+	--principal-yellow: #cf9a36;
+	--second-yellow: #ecdca5;
+	--white: #feffff;
+	--ultraLighit-grey: #f6f8fa;
+	--light-grey: #d0d0d0;
+	--medium-grey: #5b5c5c;
+	--black: #242526;
+}
+
+footer {
+	width: 100%;
+	height: auto;
+	background: var(--second-purple);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 300px));
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.informationMap {
+	text-decoration: none;
+	color: var(--light-grey);
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.mapsimg {
+	margin-top: 6px;
+	width: 50px;
+	height: 50px;
+}
+
+.redes {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.rede {
+	display: inline-block;
+}
+
+.imgRed {
+	width: 60px;
+	height: 60px;
+}

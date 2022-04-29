@@ -21,10 +21,14 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+header {
+	position: relative;
+	z-index: 99;
+}
 .image_nav {
-	width: 80px;
-	height: 80px;
-	background-image: url('./assets/logo.jpeg');
+	width: 90px;
+	height: 90px;
+	background-image: url('../assets/LOGO_JARDÍN_IMPERIAL.jpeg');
 	background-repeat: no-repeat;
 	background-size: contain;
 	/* Con las dos lineas a continuación QUITO EL FONDO BLANCO*/
@@ -132,6 +136,13 @@
 }
 
 @media (max-width: 800px) {
+	.image_nav {
+		width: 80px;
+		height: 80px;
+		background-image: url('../assets/logo.jpeg');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 	.menu_desplegable {
 		display: flex;
 	}

@@ -1,0 +1,475 @@
+:root {
+	--principal-orange: #ff4800;
+	--second-orange: #fda880;
+	--third-orange: #d35527;
+	--principal-purple: #940073;
+	--second-purple: #c483b4;
+	--third-purple: #6e1159;
+	--principal-yellow: #cf9a36;
+	--second-yellow: #ecdca5;
+	--white: #feffff;
+	--ultraLighit-grey: #f6f8fa;
+	--light-grey: #d0d0d0;
+	--medium-grey: #5b5c5c;
+	--black: #242526;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+main {
+	width: 100%;
+	padding-top: 5px;
+	background-color: var(--second-orange);
+	position: static;
+	z-index: 1; /*stablecer si un elemento se posiciona por encima o debajo de otro. Por defecto, el z-índex de un elemento es cero */
+}
+
+.container-slider {
+	margin-top: 50px;
+	width: 90%;
+	/* max-width: 600px; */
+	margin: 0 auto;
+	/*Overflow */
+	overflow: hidden; /* sirve para esconder lo que se salga de su contenedor*/
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: 0px 0px 20px 3px var(--principal-purple);
+	position: relative;
+}
+
+.slider {
+	display: flex;
+	width: 400%; /* Si coloco mas imagenes, aumentar en proporción esto OJOO!*/
+	height: 400px;
+	margin-left: -100%;
+}
+
+.slider__section {
+	width: 100%;
+}
+
+.slider__img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Para que las imagenes NO se estiren*/
+}
+
+.slider__btn {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: var(--second-orange);
+	opacity: 0.6;
+	top: calc(50% - 25px);
+	border-radius: 20%;
+	cursor: pointer;
+}
+
+.slider__btn:hover {
+	opacity: 1;
+}
+
+.slider__btn--right {
+	background-image: url('../assets/rightBnt.svg');
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+	right: 4px;
+}
+
+.slider__btn--left {
+	background-image: url('../assets/leftBtn.svg');
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+	left: 4px;
+}
+
+.espacio {
+	margin: 10px auto;
+	width: 94%;
+}
+
+/* <---- Types of arrangement ------> */
+.types-grid {
+	display: grid;
+	gap: 25px;
+	justify-content: center;
+	/* grid-template-columns: repeat(auto-fit, minmax(120px, 250px)); */
+	grid-template-columns: repeat(auto-fit, 120px);
+}
+.type-grid-item {
+	background: var(--second-yellow);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: ease 0.3s;
+	border-radius: 10px;
+}
+
+.type-grid-information {
+	text-decoration: none;
+	color: var(--principal-orange);
+	font-weight: bold;
+	text-align: center;
+}
+.type-grid-item img {
+	width: 88%;
+	height: 88%;
+	display: block;
+	margin: 0 auto;
+	object-fit: contain; /*Contain, ya que quiero que se vea tda la imagen*/
+	border-radius: 12px;
+}
+.type-grid-information:hover {
+	color: var(--principal-purple);
+	transition: 0.2s;
+}
+.type-grid-item:hover {
+	transform: scale(1.2);
+	transition: 0.3s;
+}
+
+/* <---- Main Month Flowers ------> */
+.month-flowers {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 155px));
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-content: center;
+}
+
+.cardMonth {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.img-cardMonth {
+	width: 60%;
+	height: 60%;
+	object-fit: cover;
+	border-radius: 20%;
+	border: 2px dotted var(--principal-orange);
+	transition: 0.2s;
+}
+
+.img-cardMonth:hover {
+	transform: scale(1.1);
+}
+
+.text-cardMonth {
+	color: var(--principal-purple);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.price-cardMonth {
+	color: var(--principal-orange);
+	font-size: 14px;
+}
+
+.btn-cardMonth {
+	background: var(--principal-purple);
+	color: var(--light-grey);
+	display: block;
+	padding: 2px 10px;
+	border: 2px solid var(--medium-grey);
+	border-radius: 20px;
+}
+
+.btn-cardMonth:active {
+	background: var(--principal-orange);
+}
+
+.month-flowersTitle {
+	color: var(--medium-grey);
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.whatpp {
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	z-index: 9999;
+	background-color: #c483b4;
+	border: 1px solid var(--light-grey);
+	border-radius: 50%;
+	left: 10px;
+	bottom: 8px;
+	transition: ease 0.3s;
+	animation: wppEfecto 1.2s infinite;
+	opacity: 0.6;
+}
+
+.whatpp:hover {
+	transform: scale(1.2);
+	transition: 0.3s;
+	opacity: 1;
+}
+
+.wppBtn {
+	width: 100%;
+	height: 100%;
+	transition: ease 1s;
+}
+
+@keyframes wppEfecto {
+	0% {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+	}
+	100% {
+		box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+	}
+}
+
+/*<------------- SECTION LIKES ---------> AT THE MOMENT CART */
+/* .section-likes {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 153px));
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-content: center;
+}
+
+.cardLikes {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border-bottom: 1px solid var(--medium-grey);
+}
+
+.img-cardLikes {
+	width: 40%;
+	height: 90%;
+	object-fit: cover;
+	border-radius: 20%;
+
+	transition: 0.2s;
+}
+
+.img-cardLikes:hover {
+	transform: scale(1.1);
+}
+
+.text-cardLikes {
+	color: var(--principal-purple);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.price-cardLikes {
+	color: var(--principal-orange);
+	font-size: 14px;
+} */
+
+.section-likes {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: 1fr;
+}
+
+.cardLikes {
+	display: flex;
+	width: 96%;
+	justify-content: space-between;
+	align-items: center;
+	margin: 6px auto;
+	border-bottom: 1px solid var(--medium-grey);
+}
+
+.img-cardLikes {
+	width: 25%;
+	height: 90%;
+	object-fit: cover;
+	border-radius: 20%;
+	transition: 0.2s;
+}
+
+.img-cardLikes:hover {
+	transform: scale(1.1);
+}
+
+.text-cardLikes {
+	color: var(--principal-purple);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.price-cardLikes {
+	color: var(--principal-orange);
+	font-size: 14px;
+}
+
+.elementsBorrar {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 6px;
+	height: 8vh;
+	background: linear-gradient(
+		to bottom,
+		var(--second-orange),
+		var(--second-yellow)
+	);
+	align-items: center;
+}
+
+.elementsBorrar p {
+	font-weight: bold;
+	color: var(--medium-grey);
+	text-align: center;
+}
+
+.vaciarTotal {
+	background: var(--principal-orange);
+	padding: 4px;
+	border-radius: 10px;
+	font-weight: bold;
+	color: var(--ultraLighit-grey);
+}
+
+/* <-------------- RESPONSIVE -------------->*/
+@media (min-width: 800px) {
+	.container-slider {
+		min-width: 500px;
+		max-width: 800px;
+		border-radius: 10%;
+	}
+
+	.slider {
+		height: 520px;
+	}
+
+	.slider__img {
+		object-fit: contain; /* Para que las imagenes NO se estiren*/
+	}
+
+	.espacio {
+		margin: 10px auto;
+		width: 80%;
+	}
+
+	/* <---- Types of arrangement ------> */
+	.types-grid {
+		grid-template-columns: repeat(auto-fit, minmax(120px, 250px));
+	}
+
+	.type-grid-information {
+		font-size: 20px;
+	}
+	.type-grid-item img {
+		border-radius: 30px;
+	}
+	.type-grid-information:hover {
+		transition: 0.3s;
+	}
+	.type-grid-item:hover {
+		transform: scale(1.1);
+	}
+
+	/* <---- Main Month Flowers ------> */
+	.month-flowers {
+		grid-template-columns: repeat(auto-fit, minmax(120px, 350px));
+		gap: 20px;
+	}
+
+	.img-cardMonth:hover {
+		transform: scale(1.1);
+	}
+
+	.text-cardMonth {
+		font-size: 18px;
+	}
+
+	.price-cardMonth {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.btn-cardMonth {
+		font-size: 18px;
+	}
+
+	.month-flowersTitle {
+		margin-top: 16px;
+	}
+
+	/*<---------------- Section Likes -------> */
+	.section-likes {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-auto-rows: 250px;
+	}
+
+	.cardLikes {
+		display: flex;
+		width: 96%;
+		justify-content: space-around;
+		align-items: center;
+		margin: 6px auto;
+		border-bottom: 1px solid var(--medium-grey);
+	}
+
+	.img-cardLikes {
+		width: 25%;
+		height: 90%;
+		object-fit: contain;
+		transition: 0.2s;
+	}
+
+	.img-cardLikes:hover {
+		transform: scale(1.1);
+	}
+
+	.text-cardLikes {
+		color: var(--principal-purple);
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.price-cardLikes {
+		color: var(--principal-orange);
+		font-size: 20px;
+	}
+
+	.elementsBorrar {
+		display: flex;
+		justify-content: space-evenly;
+		margin-top: 6px;
+		height: 8vh;
+		background: linear-gradient(
+			to bottom,
+			var(--second-orange),
+			var(--second-yellow)
+		);
+		align-items: center;
+	}
+
+	.elementsBorrar p {
+		font-weight: bold;
+		color: var(--medium-grey);
+		text-align: center;
+		font-size: 24px;
+	}
+
+	.vaciarTotal {
+		background: var(--principal-orange);
+		padding: 4px;
+		border-radius: 10px;
+		font-weight: bold;
+		color: var(--ultraLighit-grey);
+		font-size: 22px;
+	}
+}
