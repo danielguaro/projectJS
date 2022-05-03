@@ -293,6 +293,35 @@ main {
 	}
 }
 
+/* <------------------- Elemento Borrar --------------------> */
+.elementsBorrar {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 6px;
+	height: 8vh;
+	background: linear-gradient(
+		to bottom,
+		var(--second-orange),
+		var(--second-yellow)
+	);
+	align-items: center;
+}
+
+.elementsBorrar p {
+	font-weight: bold;
+	color: var(--medium-grey);
+	text-align: center;
+}
+
+.vaciarTotal {
+	background: var(--principal-orange);
+	padding: 4px;
+	border-radius: 10px;
+	font-weight: bold;
+	color: var(--ultraLighit-grey);
+}
+
+/* <-------------- RESPONSIVE -------------->*/
 @media (min-width: 800px) {
 	.container-slider {
 		min-width: 500px;
@@ -374,5 +403,14 @@ main {
 
 	.month-flowersTitle {
 		margin-top: 16px;
+	}
+
+	/* <------------------- Elemento Borrar --------------------> */
+	.elementsBorrar p {
+		font-size: 24px;
+	}
+
+	.vaciarTotal {
+		font-size: 22px;
 	}
 }

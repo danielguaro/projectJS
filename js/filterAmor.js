@@ -3,9 +3,12 @@ import { shopCart } from './floresMes.js';
 
 const amor = [];
 const shopCartAmor = shopCart;
+console.log('shopCartAmor', shopCartAmor);
 
 const categoryTitle = document.querySelectorAll('.category-title');
 const floresMomento = document.querySelector('.section-likes');
+const ValorTotal = document.querySelector('.ValorTotal');
+const vaciarTotal = document.querySelector('.vaciarTotal');
 
 for (let i = 0; i < categoryTitle.length; i++) {
 	categoryTitle[i].addEventListener(
@@ -27,24 +30,30 @@ for (let data of datas) {
 		amor.push(data);
 	}
 }
-console.log(amor);
+let categoria = console.log('amor', amor);
+// <------------ Eventos ----------------->
+// DOMContentLoaded = para cargar todo lo que venga después de la ,
+document.addEventListener('DOMContentLoaded', () => {
+	MostrarTodo();
+});
 
-const ramos = amor.filter((element) => {
-	return element.tipo.includes('ramo');
-});
-console.log(ramos);
-const anchetas = amor.filter((element) => {
-	return element.tipo.includes('ancheta');
-});
-console.log(anchetas);
-const ramilletes = amor.filter((element) => {
-	return element.tipo.includes('ramillete');
-});
-console.log(ramilletes);
-const cajas = amor.filter((element) => {
-	return element.tipo.includes('caja');
-});
-console.log(cajas);
+// const ramos = amor.filter((element) => {
+// 	return element.tipo.includes('ramo');
+// });
+// console.log(ramos);
+// const anchetas = amor.filter((element) => {
+// 	return element.tipo.includes('ancheta');
+// });
+// console.log(anchetas);
+// const ramilletes = amor.filter((element) => {
+// 	return element.tipo.includes('ramillete');
+// });
+// console.log(ramilletes);
+// const cajas = amor.filter((element) => {
+// 	return element.tipo.includes('caja');
+// });
+// console.log(cajas);
+console.log('categoryTitle', categoryTitle);
 
 const momentoAmor = document.querySelector('.filterResult');
 for (let i = 0; i < categoryTitle.length; i++) {
@@ -56,36 +65,7 @@ for (let i = 0; i < categoryTitle.length; i++) {
 function changeFlowers(categories) {
 	if (categories.innerHTML.includes('<li>Todo</li>')) {
 		momentoAmor.innerHTML = '';
-		for (let a of amor) {
-			//La creación del HTML desde JS, se hará con Scripting
-			const divCard = document.createElement('div');
-			divCard.classList.add('cardFilter'); //Agregar una clase al elemento creado
-
-			const imgFlor = document.createElement('img');
-			imgFlor.classList.add('img-cardFilter');
-			imgFlor.src = a.img;
-
-			const tituloFlor = document.createElement('h3');
-			tituloFlor.classList.add('text-cardFilter');
-			tituloFlor.textContent = a.nombre;
-
-			const price = document.createElement('p');
-			price.classList.add('price-cardFilter');
-			price.textContent = a.precio;
-
-			const btn = document.createElement('button');
-			btn.classList.add('btn-cardFilter');
-			btn.textContent = 'Comprar';
-			btn.onclick = () => {
-				addTocartAmor(a.id);
-			};
-
-			divCard.appendChild(imgFlor);
-			divCard.appendChild(tituloFlor);
-			divCard.appendChild(price);
-			divCard.appendChild(btn);
-			momentoAmor.appendChild(divCard);
-		}
+		MostrarTodo();
 	}
 	if (categories.innerHTML.includes('<li>Ramos</li>')) {
 		momentoAmor.innerHTML = '';
@@ -107,6 +87,39 @@ function changeFlowers(categories) {
 		console.log('CAJAS');
 	}
 }
+
+const MostrarTodo = () => {
+	for (let a of amor) {
+		//La creación del HTML desde JS, se hará con Scripting
+		const divCard = document.createElement('div');
+		divCard.classList.add('cardFilter'); //Agregar una clase al elemento creado
+
+		const imgFlor = document.createElement('img');
+		imgFlor.classList.add('img-cardFilter');
+		imgFlor.src = a.img;
+
+		const tituloFlor = document.createElement('h3');
+		tituloFlor.classList.add('text-cardFilter');
+		tituloFlor.textContent = a.nombre;
+
+		const price = document.createElement('p');
+		price.classList.add('price-cardFilter');
+		price.textContent = a.precio;
+
+		const btn = document.createElement('button');
+		btn.classList.add('btn-cardFilter');
+		btn.textContent = 'Comprar';
+		btn.onclick = () => {
+			addTocartAmor(a.id);
+		};
+
+		divCard.appendChild(imgFlor);
+		divCard.appendChild(tituloFlor);
+		divCard.appendChild(price);
+		divCard.appendChild(btn);
+		momentoAmor.appendChild(divCard);
+	}
+};
 
 const functionFilter = (moments, tipo) => {
 	for (let moment of moments) {

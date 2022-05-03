@@ -444,32 +444,11 @@ main {
 		font-size: 20px;
 	}
 
-	.elementsBorrar {
-		display: flex;
-		justify-content: space-evenly;
-		margin-top: 6px;
-		height: 8vh;
-		background: linear-gradient(
-			to bottom,
-			var(--second-orange),
-			var(--second-yellow)
-		);
-		align-items: center;
-	}
-
 	.elementsBorrar p {
-		font-weight: bold;
-		color: var(--medium-grey);
-		text-align: center;
 		font-size: 24px;
 	}
 
 	.vaciarTotal {
-		background: var(--principal-orange);
-		padding: 4px;
-		border-radius: 10px;
-		font-weight: bold;
-		color: var(--ultraLighit-grey);
 		font-size: 22px;
 	}
 }
