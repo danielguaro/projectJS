@@ -12,9 +12,10 @@ for (let data of datas) {
 // querySelector = un selector que sirve tanto para Id, Class y tags, sin embargo toca especificar
 const floresDelMes = document.querySelector('.month-flowers');
 const tusMeGusta = document.querySelector('.section-likes');
-const ValorTotal = document.querySelector('.ValorTotal');
+// const ValorTotal = document.querySelector('.ValorTotal');
 const vaciarTotal = document.querySelector('.vaciarTotal');
-export let shopCart = [];
+let shopCart = [];
+export let floresEnCarrito;
 
 // <------------ Eventos ----------------->
 // DOMContentLoaded = para cargar todo lo que venga después de la ,
@@ -60,7 +61,7 @@ const mostrarFlores = () => {
 	}
 };
 
-let floresEnCarrito = getCarFromStorage();
+floresEnCarrito = getCarFromStorage();
 
 function getCarFromStorage() {
 	return JSON.parse(sessionStorage.getItem('carrito')) ?? [];
@@ -68,15 +69,24 @@ function getCarFromStorage() {
 const addTocart = (id) => {
 	// shopCart.push(id.target.getAttribute('marcador'));
 	shopCart = [];
-	console.log('shopCart--->', shopCart);
+	console.log('shopCart--- 72>', shopCart);
 	// floresEnCarrito = getCarFromStorage();
 	const idProducto = id.target.getAttribute('marcador');
+	console.log('idProducto--- 75>', idProducto);
 	const florSeleccionada = floresMes.find((flor) => flor.id == idProducto);
+	console.log('florSeleccionada------------------------->', florSeleccionada);
+	swal({
+		title: 'Agregado al carrito',
+		text: florSeleccionada.nombre,
+		icon: 'success',
+		button: false,
+		timer: 2000,
+	});
 	floresEnCarrito.push(florSeleccionada);
 	floresEnCarrito.map((flor) => {
 		shopCart.push(flor.id.toString());
 	});
-	console.log('floresEnCarrito, shopCart', floresEnCarrito, shopCart);
+	console.log('floresEnCarrito, shopCart____> 81', floresEnCarrito, shopCart);
 	sessionStorage.setItem('carrito', JSON.stringify(floresEnCarrito));
 
 	/* */
@@ -84,7 +94,7 @@ const addTocart = (id) => {
 };
 
 if (floresEnCarrito.length) {
-	console.log('floresEnCarrito------->', floresEnCarrito);
+	console.log('floresEnCarrito-------> 89', floresEnCarrito);
 	floresEnCarrito.map((flor) => {
 		shopCart.push(flor.id.toString());
 	});
@@ -96,7 +106,7 @@ function showCart() {
 	// Quitar los duplicados
 
 	const carritoSinDuplicados = [...new Set(shopCart)];
-	console.log('Soy el carrito Sin Duplicar', carritoSinDuplicados);
+	console.log('Soy el carrito Sin Duplicar------> 101', carritoSinDuplicados);
 	//Quitar los duplicados
 	carritoSinDuplicados.forEach((flor) => {
 		//Obtener la flor
@@ -137,6 +147,9 @@ function showCart() {
 		bntBorrar.textContent = 'X';
 		bntBorrar.dataset.flor = flor;
 		bntBorrar.addEventListener('click', borrarFlorCarro);
+		bntBorrar.addEventListener('click', () => {
+			location.reload();
+		});
 
 		//appendar --> Para que todos los elementos queden
 		divCard.appendChild(imgFlorMes);
@@ -149,7 +162,7 @@ function showCart() {
 		tusMeGusta.appendChild(divCard);
 	});
 
-	ValorTotal.textContent = `$ ${calcularTotal()}`;
+	// ValorTotal.textContent = `$ ${calcularTotal()}`;
 }
 
 function borrarFlorCarro(evento) {
@@ -167,6 +180,7 @@ function borrarFlorCarro(evento) {
 	sessionStorage.setItem('carrito', JSON.stringify(nuevoArray));
 	// Renderizar
 	floresEnCarrito = nuevoArray;
+	console.log('floresEnCarrito------> 172', floresEnCarrito);
 	showCart();
 }
 
@@ -191,7 +205,36 @@ function vaciarCarro() {
 	sessionStorage.clear();
 	shopCart = [];
 	showCart();
+	console.log('floresEnCarrito--VACIAR', floresEnCarrito);
 }
 
 //Evento vaciar
-vaciarTotal.addEventListener('click', vaciarCarro);
+// vaciarTotal.addEventListener('click', vaciarCarro);
+// vaciarTotal.addEventListener('click', () => {
+// 	location.reload();
+// });
+vaciarTotal.onclick = () => {
+	swal({
+		title: '¿Seguro quieres vaciar el carro?',
+		text: 'Una vez borrado, perderás toda información almacenada!',
+		icon: 'warning',
+		buttons: true,
+		dangerMode: true,
+	}).then((willDelete) => {
+		if (willDelete) {
+			swal('Tu carro ha sido vaciado exitosamente', {
+				icon: 'success',
+				button: false,
+			});
+			vaciarCarro();
+			setTimeout(() => {
+				location.reload();
+			}, 1700);
+		} else {
+			swal('Continuas con tu carro', {
+				button: false,
+				timer: 1500,
+			});
+		}
+	});
+};

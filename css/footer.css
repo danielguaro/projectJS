@@ -13,6 +13,9 @@
 	--medium-grey: #5b5c5c;
 	--black: #242526;
 }
+body {
+	background: var(--second-orange);
+}
 
 footer {
 	width: 100%;
