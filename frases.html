@@ -10,6 +10,7 @@
 			href="./stylesDesktop.css"
 			/> -->
 		<link rel="stylesheet" href="./css/style_header.css" />
+		<link rel="stylesheet" href="./css/frase/styles.css" />
 		<link rel="stylesheet" href="./css/cart/styles.css" />
 		<link rel="stylesheet" href="./css/footer.css" />
 		<title>Floristeria Jardin Imperial</title>
@@ -139,15 +140,22 @@
 					><img class="wppBtn" src="./assets/wppLogo.svg" alt=""
 				/></a>
 			</div>
-			<h2 class="month-flowersTitle">Carrito</h2>
-			<section class="section-likes"></section>
-			<section class="section-likesAmor"></section>
-			<div class="elementsBorrar">
-				<p>Total</p>
-				<p class="ValorTotal"></p>
-				<button class="vaciarTotal">Vaciar</button>
+			<h2 class="month-flowersTitle">Buscador</h2>
+			<div class="buscador">
+				<form id="formulario">
+					<!-- <label class="buscar">Buscar</label> -->
+					<input
+						type="text"
+						class="termino"
+						placeholder="    Ejemplo: amor,te quiero, felicitaciones"
+						id="termino"
+					/>
+
+					<input type="submit" value="Buscar frase" class="button" />
+				</form>
 			</div>
-			<section><article></article></section>
+
+			<div id="resultado"></div>
 		</main>
 		<footer>
 			<div class="redes">
@@ -176,7 +184,7 @@
 		<!-- <script src="./js/menu.js" type="module"></script> -->
 		<script src="./js/dataBD.js" type="module"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-		<script src="./js/cart.js" type="module"></script>
+		<script src="./js/frases.js" type="module"></script>
 		<script src="./js/floresMes.js" type="module"></script>
 		<!-- <script src="./js/ensayo1.js" type="module"></script> -->
 		<script src="./js/filterAmor.js" type="module"></script>

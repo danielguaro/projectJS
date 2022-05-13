@@ -1,5 +1,17 @@
 import DATA from './dataBD.js';
 
+/* */
+fetch('/js/DATA.json')
+	.then((response) => response.json())
+	.then((data) => {
+		data.forEach((producto) => {
+			if (producto.momento == 'florMes') {
+				floresMes.push(producto);
+			}
+		});
+	});
+
+/* */
 const floresMes = [];
 const datas = DATA;
 for (let data of datas) {
@@ -7,6 +19,7 @@ for (let data of datas) {
 		floresMes.push(data);
 	}
 }
+// console.log(floresMes.length);
 
 // getElementsByClassName = Devuelve una "especie de array"(documentColection)
 // querySelector = un selector que sirve tanto para Id, Class y tags, sin embargo toca especificar
@@ -104,6 +117,8 @@ function showCart() {
 	//Para limpiar el listado y evitar que se repita los llamados
 	tusMeGusta.innerHTML = '';
 	// Quitar los duplicados
+
+	console.log('floresMes Dentro de ShowCart ----->', floresMes);
 
 	const carritoSinDuplicados = [...new Set(shopCart)];
 	console.log('Soy el carrito Sin Duplicar------> 101', carritoSinDuplicados);

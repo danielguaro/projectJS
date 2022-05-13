@@ -1,0 +1,91 @@
+:root {
+	--principal-orange: #ff4800;
+	--second-orange: #fda880;
+	--third-orange: #d35527;
+	--principal-purple: #940073;
+	--second-purple: #c483b4;
+	--third-purple: #6e1159;
+	--principal-yellow: #cf9a36;
+	--second-yellow: #ecdca5;
+	--white: #feffff;
+	--ultraLighit-grey: #f6f8fa;
+	--light-grey: #d0d0d0;
+	--medium-grey: #5b5c5c;
+	--black: #242526;
+}
+
+#formulario {
+	display: flex;
+	flex-direction: column;
+}
+
+#resultado {
+	margin-top: 20px;
+}
+
+.termino {
+	width: 90%;
+	margin: 0 auto;
+	border-radius: 30px;
+	min-height: 28px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.button {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	width: 34%;
+	height: 34px;
+	border-radius: 20px;
+	color: var(--light-grey);
+	background: var(--principal-purple);
+	font-weight: bold;
+}
+
+.card {
+	width: 97%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	background: var(--second-purple);
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+.title {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 6px;
+	color: var(--principal-orange);
+	font-weight: bold;
+}
+
+.phrase {
+	margin: 0 auto;
+	width: 96%;
+	color: var(--ultraLighit-grey);
+	margin-bottom: 6px;
+}
+
+.number {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 12%;
+	color: var(--principal-purple);
+	font-size: 12px;
+}
+
+@media (min-width: 800px) {
+	.button {
+		width: 120px;
+	}
+
+	#resultado {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+	}
+}

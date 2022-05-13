@@ -1,0 +1,67 @@
+[
+	{
+		"tipo": "Amor",
+		"numero": 1001,
+		"frase": "Trato de encontrar la palabra que te defina reflejada en las estrellas, pero solo puedo mirarte a los ojos y darte las gracias por darme cada segundo de felicidad."
+	},
+	{
+		"tipo": "Amor",
+		"numero": 1002,
+		"frase": "Gracias por robarte mi corazón, tú le has dado un nuevo sentido a mi vida."
+	},
+	{
+		"tipo": "Amor",
+		"numero": 1003,
+		"frase": "¿Qué cuanto te quiero? Pues dime cuantas estrellas hay en el cielo, cuánta agua hay en el mar, cuanta arena hay en la playa, y entonces ahí, yo te diré cuanto te quiero."
+	},
+	{
+		"tipo": "Aniversario",
+		"numero": 2001,
+		"frase": "Gracias por escuchar mis pensamientos, por comprender mis sueños, por convivir con mis defectos y por quererme durante todos estos años. ¡feliz aniversario!"
+	},
+	{
+		"tipo": "Cumpleaños",
+		"numero": 3001,
+		"frase": "Cada cumpleaños es una fecha muy especial, por eso piensa que hoy comienza para ti una nueva etapa llena de oportunidades, y quiero desearte de todo corazón salud, buena suerte, larga vida, dinero, gente que te quiera y un muy ¡Feliz Cumpleaños!"
+	},
+	{
+		"tipo": "Cumpleaños",
+		"numero": 3002,
+		"frase": "Quizás no tenga dinero suficiente para el regalo más costoso, pero si tengo un corazón enorme para regalarte lo más valioso… Todo mi amor. ¡Feliz Cumpleaños!"
+	},
+	{
+		"tipo": "Cumpleaños",
+		"numero": 3003,
+		"frase": "A una persona tan linda y tan especial solo se le puede desear lo mejor hoy y siempre, te quiero mucho. ¡Feliz Cumpleaños!"
+	},
+	{
+		"tipo": "Madres",
+		"numero": 4001,
+		"frase": " Que éste día sea portador de todo nuestro amor, cariño y gratitud por tus incontables momentos dedicados a nuestra vida."
+	},
+	{
+		"tipo": "Madres",
+		"numero": 4002,
+		"frase": " La misión que Dios te encomendó sobre la tierra es la más compleja pero aun así llenaste mi vida de amor y me enseñaste lo especial para ponerle color a cada día y con tu ejemplo haces que yo tenga el deber de ser siempre la mejor. Dios te bendiga y te de salud."
+	},
+	{
+		"tipo": "Grados",
+		"numero": 5001,
+		"frase": "Felicitaciones en el día de tu grado, todos los que hemos estado cerca presenciando el desarrollo de tu crecimiento personal deseamos que este sea solo el primero de los éxitos de tu carrera profesional."
+	},
+	{
+		"tipo": "Grados",
+		"numero": 5002,
+		"frase": "En cada logro que se alcanza esta siempre la satisfacción que los sueños se vuelven realidad, cuando se construya con empeño, dedicación y esfuerzo. ¡Felicitaciones!"
+	},
+	{
+		"tipo": "Reconciliación",
+		"numero": 6001,
+		"frase": "Aunque esto no repare mi incumplimiento por mis múltiples ocupaciones, te pido disculpas a través de este detalle."
+	},
+	{
+		"tipo": "Reconciliación",
+		"numero": 6002,
+		"frase": "Podría decirte mil pretextos por mi mal comportamiento pero he decidido decirte solamente una palabra: perdóname."
+	}
+]
